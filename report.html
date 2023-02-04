@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+<title>MyPage</title>
+</head>
+<body>
+
+<!--Header-->
+<header class="text-gray-600 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+      <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="graduation-cap" class="w-8 h-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+        <path fill="currentColor" d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path>
+      </svg>
+      <!--<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+      </svg>-->
+      <span class="ml-3 text-xl">Study Mitra</span>
+    </a>
+    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+      <a class="mr-5 hover:text-gray-900">HOME</a>
+	
+      <a class="mr-5 hover:text-gray-900" href="student.html">STUDENT</a>
+      <a class="mr-5 hover:text-gray-900" href="result.html">RESULTS</a>
+      <a class="mr-5 hover:text-gray-900" href="quiz.html">QUIZ</a>
+    </nav>
+  
+    <a href = "home.html"><button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Log out
+      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7"></path>
+      </svg>
+    <!--</button>-->
+  </div>
+</header>
+
+                 <!--<section class="text-black-600 body-font">-->
+                    <!--<div class="container px-5 py-24 mx-auto flex flex-col">
+                      <div class="lg:w-4/6 mx-auto">-->
+                      
+                        <div class="text-center"><font color = "bg-blue-100">CLASS REPORT</font>
+                          <div class="container px-5 py-24 mx-auto flex flex-col">
+                        <div class="lg:w-4/6 mx-auto">
+                        <div class="rounded-lg h-30 w-55 overflow-hidden">
+                          <!--<img alt="content" class="object-cover object-center h-full w-full" src="https://dummyimage.com/1200x500">-->
+                          <div class="shadow-lg rounded-lg overflow-hidden">
+                            <!--<div class="text-center"><font color = "black">SCORE GRAPH AT EACH LEVEL</font></div>-->
+                            <!--<div class="py-0 px-0 bg-gray-50">SCORE GRAPH AT EACH LEVEL</div>-->
+                            <canvas class="p-0" id="chartBar"></canvas>
+                          </div>
+                          
+                          <!-- Required chart.js -->
+                          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                          
+                          <!-- Chart bar -->
+                          <script>
+                            const labelsBarChart = [
+                              "Remembering",
+                              "Understanding",
+                              "Applying",
+                              "Analyzing",
+                              "Evaluating",
+                              "Creating",
+                            ];
+                            const dataBarChart = {
+                              labels: labelsBarChart,
+                              datasets: [
+                                {
+                                  label: "SCORES",
+                                  backgroundColor: "hsl(252, 82.9%, 67.8%)",
+                                  borderColor: "hsl(252, 82.9%, 67.8%)",
+                                  data: [60, 100, 50, 77, 58, 75, 35],
+                                  <!--0, 10, 5, 2, 20, 30, 45-->
+                                },
+                              ],
+                            };
+                          
+                            const configBarChart = {
+                              type: "bar",
+                              data: dataBarChart,
+                              options: {},
+                            };
+                          
+                            var chartBar = new Chart(
+                              document.getElementById("chartBar"),
+                              configBarChart
+                            );
+                          </script>
+                          <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+                          
+                          <div class="shadow-lg rounded-lg overflow-hidden">
+                            <div class="py-3 px-5 bg-gray-50">Regression Line</div>
+                            <canvas class="p-10" id="chartLine"></canvas>
+                          </div>
+
+                          
+                          
+                          <!-- Required chart.js -->
+                          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                          
+                          <!-- Chart line -->
+                          <script>
+                            const labels = ["Remembering", "Understanding", "Applying", "Analyzing", "Evaluating", "Creating"];
+                            const data = {
+                              labels: labels,
+                              datasets: [
+                                {
+                                  label: "My First dataset",
+                                  backgroundColor: "hsl(252, 82.9%, 67.8%)",
+                                  borderColor: "hsl(252, 82.9%, 67.8%)",
+                                  data: [0, 10, 5, 2, 20, 30, 45],
+                                },
+                              ],
+                            };
+                          
+                            const configLineChart = {
+                              type: "line",
+                              data,
+                              options: {},
+                            };
+                          
+                            var chartLine = new Chart(
+                              document.getElementById("chartLine"),
+                              configLineChart
+                            );
+                          </script>
+                        </div>
+                        <div class="flex flex-col sm:flex-row mt-10">
+                          <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
+                            <!--<div class="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">-->
+                              <div class="flex flex-col items-center text-center justify-center">
+                              <svg aria-hidden="false" focusable="true" data-prefix="near" data-icon="check-circle" class="w-12 h-12" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path fill="rgb(6,97,38)" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"></path>
+                              </svg>
+                              
+
+
+                              <!--<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">512
+                                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                              </svg>-->
+                           
+                            <!--<div class="flex flex-col items-center text-center justify-center">-->
+                              <!--<h2 class="font-medium title-font mt-4 text-gray-900 text-lg">Phoebe Caulfield</h2>-->
+                              
+                              <div class="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4"></div>
+                              <p class="text-black-600">The understanding level of the students on concepts covered in the test is better.But need to improve the performance in creative level.</p>
+                            </div>
+                          </div>
+                          <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+                            <p class="leading-relaxed text-lg mb-4">&bull;As we can see from the scatter diagram above , the slope of line shows strong positive correlation between remembering and creating level.<br>&bull;This indicates those students whose remembering level is good are also good at creating level.</p>
+                            <!--<a class="text-indigo-500 inline-flex items-center">Learn More-->
+                              <!--<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                                <path d="M5 12h14M12 5l7 7-7 7"></path>
+                              </svg>-->
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  
+                  <!--<svg width="1700" height="1800">
+                    <rect x="90" y="30" width="500" height="600" style="fill:rgb(200, 189, 194);stroke:rgb(55, 11, 7);stroke-width:5;fill-opacity:0.1;stroke-opacity:0.9" />This is rectangle
+                  </svg>
+                           
+                  
+
+                  <!--<div style="width:800px;height:700px;border:5px solid rgba(78, 35, 147, 5);"> 78,35,147,0.158"fill:rgb(200, 189, 194)
+                  </div>-->
+
+<!--Footer-->
+<footer class="text-gray-600 body-font">
+  <div class="container px-4 py-40 mx-auto flex items-center sm:flex-row flex-col">
+    <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+      <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="graduation-cap" class="w-8 h-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+        <path fill="currentColor" d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path>
+      </svg>
+      
+      <span class="ml-3 text-xl">Study Mitra</span>
+    </a>
+    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2023 Stusy Mitra —
+      <a href="https://twitter.com/knyttneve" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@knyttneve</a>
+    </p>
+    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+      <a class="text-gray-500">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-gray-500">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-gray-500">
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-gray-500">
+        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+          <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+          <circle cx="4" cy="4" r="2" stroke="none"></circle>
+        </svg>
+      </a>
+    </span>
+  </div>
+</footer>
+
+
+
+
+</body>
+</html>
